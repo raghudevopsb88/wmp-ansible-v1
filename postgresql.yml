@@ -28,6 +28,7 @@
 
     - name: Install Postgres
       ansible.builtin.dnf:
+        state: present
         name:
           - "postgresql16-server"
           - "postgresql16"

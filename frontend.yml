@@ -29,7 +29,7 @@
         remote_src: yes
 
     - name: Build frontend
-      ansible.builtin.shell: xnpm ci ; xnpm run build ; xmv dist html
+      ansible.builtin.shell: npm ci ; npm run build ; mv dist html
       args:
         chdir: /usr/share/nginx/
 

@@ -44,4 +44,4 @@
         dest: /tmp/setup.sql
 
     - name: Load schema
-      ansible.builtin.shell: sudo -u postgres /usr/pgsql-16/bin/psql < setup.sql
+      ansible.builtin.shell: sudo -u postgres /usr/pgsql-16/bin/psql < /tmp/setup.sql

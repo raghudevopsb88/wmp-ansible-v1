@@ -23,11 +23,14 @@
         name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
         state: present
 
+   - name: Disable postgres default module
+     ansible.builtin.shell: dnf -qy module disable postgresql
+
     - name: Install Postgres
       ansible.builtin.dnf:
         name:
-          - "@postgresql:16/postgresql16-server"
-          - "@postgresql:16/postgresql16"
+          - "postgresql16-server"
+          - "postgresql16"
 
     - name: Initialize Database
       ansible.builtin.shell: /usr/pgsql-16/bin/postgresql-16-setup initdb
